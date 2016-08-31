@@ -1,0 +1,22 @@
+{
+  "name": "Yu-Gi-Oh",
+  "homepage": "https://github.com/dzervas/Yu-Gi-Oh",
+  "authors": [
+    "Dimitris Zervas <dzervas@dzervas.gr>"
+  ],
+  "description": "Assignment for Frontend Developer application",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-bootstrap": "^2.1.3"
+  }
+}
