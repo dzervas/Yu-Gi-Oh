@@ -6,13 +6,7 @@ app.controller("ctrlDeck", function($scope, $route, $routeParams, Card, imageUrl
 	$scope.$on('$routeChangeSuccess', function() {
 		console.log("changed", $routeParams.name);
 		if (typeof($routeParams.name) !== "undefined")
-			Card.get($routeParams.name)
-				.success(function(info) {
-					info.data["image"] = imageUrl + info.data.name;
-					$scope.cardInfo = info.data;
-				}).error(function(err) {
-					console.log("Failed to get " + name + " card info! Try another card")
-				});
+			$scope.cardInfo = $scope.cards[$routeParams.name];
 	});
 
 	deck.forEach(function(card) {

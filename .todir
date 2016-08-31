@@ -1,0 +1,4 @@
+ - Unit tests
+ - Reloading requires re-selecting the card (url does not work)
+ - 0 Attack/Defense will not show up in table
+ - Badges under cards for card types
