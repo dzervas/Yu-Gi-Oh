@@ -1,0 +1,31 @@
+{
+  "name": "yu-gi-oh",
+  "version": "1.0.0",
+  "description": "Assignment for Frontend Developer application",
+  "main": "app.js",
+  "dependencies": {
+    "jasmine": "^2.5.0",
+    "karma": "^1.2.0",
+    "karma-jasmine": "^1.0.2"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.0",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzervas/Yu-Gi-Oh.git"
+  },
+  "author": "Dimitris Zervas <dzervas@dzervas.gr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dzervas/Yu-Gi-Oh/issues"
+  },
+  "homepage": "https://github.com/dzervas/Yu-Gi-Oh#readme"
+}

@@ -37,4 +37,4 @@ app.config(function($routeProvider) {
 			templateUrl: "index.html",
 			controller: "ctrlDeck"
 		})
-})
+});
