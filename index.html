@@ -7,21 +7,25 @@
 <body ng-app="Yu-Gi-Oh" ng-controller="ctrlDeck">
 	<div class="row">
 		<!-- Card info -->
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<ul id="sideDeck" class="list-group">
 				<li class="list-group-item" ng-repeat="card in cards">
 					<a href="#/{{card.name}}"><img height="30" src="{{card.image}}" /></a>&nbsp<a href="#/{{card.name}}">{{card.name}}</a>
+					<button type="button" class="btn btn-sm disabled pull-right">
+						<i class="fa fa-columns" aria-hidden="true"></i>
+						{{card.card_type}}
+					</button>
 				</li>
 			</ul>
 		</div>
 
 		<!-- Placeholder -->
-		<div class="col-md-10" ng-hide="cardInfo">
+		<div class="col-md-9" ng-hide="cardInfo">
 			<center><h1><- Choose a card from the deck!</h1><center>
 		</div>
 
 		<!-- Card info -->
-		<div class="col-md-10" ng-show="cardInfo">
+		<div class="col-md-9" ng-show="cardInfo">
 			<center><h1>{{cardInfo.name}}</h1></center>
 			<img src="{{cardInfo.image}}" class="col-md-4" />
 			<div class="col-md-8">
