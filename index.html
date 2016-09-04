@@ -43,11 +43,11 @@
 							<td>Monster Family</td>
 							<td>{{cardInfo.family}}</td>
 						</tr>
-						<tr ng-show="cardInfo.atk">
+						<tr ng-show="cardInfo.card_type == 'monster'">
 							<td>Attack</td>
 							<td>{{cardInfo.atk}}</td>
 						</tr>
-						<tr ng-show="cardInfo.def">
+						<tr ng-show="cardInfo.card_type == 'monster'">
 							<td>Defense</td>
 							<td>{{cardInfo.def}}</td>
 						</tr>
