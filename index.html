@@ -1,7 +1,8 @@
 <!doctype HTML>
 <head>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./template.css" />
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="template.css" />
 </head>
 <body ng-app="Yu-Gi-Oh" ng-controller="ctrlDeck">
 	<div class="row">
@@ -43,14 +44,6 @@
 							<td>Monster Family</td>
 							<td>{{cardInfo.family}}</td>
 						</tr>
-						<tr ng-show="cardInfo.card_type == 'monster'">
-							<td>Attack</td>
-							<td>{{cardInfo.atk}}</td>
-						</tr>
-						<tr ng-show="cardInfo.card_type == 'monster'">
-							<td>Defense</td>
-							<td>{{cardInfo.def}}</td>
-						</tr>
 						<tr ng-show="cardInfo.level">
 							<td>Monster Level</td>
 							<td>{{cardInfo.level}}</td>
@@ -61,6 +54,25 @@
 						</tr>
 					</tbody>
 				</table>
+				<!-- Keep in mind that ATK/DEF can be 0 -->
+				<div class="col-md-12" ng-show="cardInfo.card_type == 'monster'">
+					<div class="col-md-6">
+						<center>
+							<button type="button" class="btn btn-lg btn-danger disabled">
+								<i class="fa fa-rocket" aria-hidden="true"></i>
+								{{cardInfo.atk}}
+							</button>
+						</center>
+					</div>
+					<div class="col-md-6">
+						<center>
+							<button type="button" class="btn btn-lg btn-primary disabled">
+								<i class="fa fa-shield" aria-hidden="true"></i>
+								{{cardInfo.def}}
+							</button>
+						</center>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
