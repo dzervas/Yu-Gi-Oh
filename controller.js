@@ -1,21 +1,25 @@
 var app = angular.module("Yu-Gi-Oh");
 
-app.controller("ctrlDeck", function($scope, $route, $routeParams, Card, imageUrl, deck) {
+app.controller("ctrlDeck", function($scope, $q, $route, $routeParams, Card, imageUrl, deck) {
+	var proms = [];
 	$scope.cards = {};
 
 	$scope.$on('$routeChangeSuccess', function() {
-		console.log("changed", $routeParams.name);
-		if (typeof($routeParams.name) !== "undefined")
-			$scope.cardInfo = $scope.cards[$routeParams.name];
+		if (typeof($routeParams.name) != "undefined") {
+			$q.all(proms).then(function() {
+				$scope.cardInfo = $scope.cards[$routeParams.name];
+			});
+		}
 	});
 
 	deck.forEach(function(card) {
-		Card.get(card)
-			.success(function(info) {
-				info.data["image"] = imageUrl + info.data.name;
-				$scope.cards[card] = info.data;
-			}).error(function(err) {
-				console.log("Failed to get " + name + " card info. Removing it from deck.")
-			});
+		proms.push(Card.get(card));
+		proms[proms.length - 1].success(function(info) {
+			info.data["image"] = imageUrl + info.data.name;
+			$scope.cards[card] = info.data;
+		});
+		proms[proms.length - 1].error(function(err) {
+			console.log("Failed to get " + card + " card info. Removing it from deck.");
+		});
 	});
 });

@@ -2,7 +2,8 @@ var app = angular.module("Yu-Gi-Oh", [
 	"ngRoute"
 ]);
 
-app.constant("cardUrl", "https://jsonp.afeld.me/?url=http://yugiohprices.com/api/card_data/");
+//app.constant("cardUrl", "https://jsonp.afeld.me/?url=http://yugiohprices.com/api/card_data/");
+app.constant("cardUrl", "http://c.vpn:8000/?url=http://yugiohprices.com/api/card_data/");
 app.constant("imageUrl", "http://yugiohprices.com/api/card_image/");
 app.constant("deck", [
 	"Burial from a Different Dimension",

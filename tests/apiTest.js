@@ -1,4 +1,15 @@
 describe("showcasing a given deck", function() {
+	beforeEach(module("Yu-Gi-Oh"));
+	//beforeEach(function() {
+		//browser().navigateTo('/');
+	//});
+
+	//it("ensures we show the whole deck", inject(function(deck) {
+		//browser().navigateTo("#/");
+		//console.log(element("#sideDeck").children.length);
+		//expect(element("#sideDeck").children.length).toBe(deck.length);
+	//}));
+
 	it("ensures we can get card info", inject(["Card", function(Card) {
 		expect(Card.get).not.to.equal(null);
 
@@ -24,5 +35,6 @@ describe("showcasing a given deck", function() {
 			expect(info.status == "fail").toBeTruthy();
 			expect(info.message == "No cards matching this name were found in our database.").toBeTruthy();
 		};
+
 	}]));
 });
