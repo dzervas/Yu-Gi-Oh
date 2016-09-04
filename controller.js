@@ -22,4 +22,16 @@ app.controller("ctrlDeck", function($scope, $q, $route, $routeParams, Card, imag
 			console.log("Failed to get " + card + " card info. Removing it from deck.");
 		});
 	});
+
+	$scope.atkStance = function() {
+		$scope.divImg = "col-md-4";
+		$scope.divInfo = "col-md-8";
+	}
+
+	$scope.defStance = function() {
+		$scope.divImg = "col-md-6 rotate";
+		$scope.divInfo = "col-md-6";
+	}
+
+	$scope.atkStance();
 });

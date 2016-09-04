@@ -1,5 +1,6 @@
 var app = angular.module("Yu-Gi-Oh", [
-	"ngRoute"
+	"ngRoute",
+	"ngAnimate"
 ]);
 
 //app.constant("cardUrl", "https://jsonp.afeld.me/?url=http://yugiohprices.com/api/card_data/");

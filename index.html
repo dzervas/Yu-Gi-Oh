@@ -10,7 +10,11 @@
 		<div class="col-md-3">
 			<ul id="sideDeck" class="list-group">
 				<li class="list-group-item" ng-repeat="card in cards">
-					<a href="#/{{card.name}}"><img height="30" src="{{card.image}}" /></a>&nbsp<a href="#/{{card.name}}">{{card.name}}</a>
+					<a href="#/{{card.name}}">
+						<img height="30" src="{{card.image}}" />
+					</a>
+					&nbsp
+					<a href="#/{{card.name}}">{{card.name}}</a>
 					<button type="button" class="btn btn-sm disabled pull-right">
 						<i class="fa fa-columns" aria-hidden="true"></i>
 						{{card.card_type}}
@@ -25,10 +29,10 @@
 		</div>
 
 		<!-- Card info -->
-		<div class="col-md-9" ng-show="cardInfo">
+		<div class="col-md-9" id="cardInfo" ng-show="cardInfo">
 			<center><h1>{{cardInfo.name}}</h1></center>
-			<img src="{{cardInfo.image}}" class="col-md-4" />
-			<div class="col-md-8">
+			<img src="{{cardInfo.image}}" ng-class="divImg" />
+			<div id="divInfo" ng-class="divInfo">
 				<h2>Description</h2>
 				<p>{{cardInfo.text}}</p>
 				<h2>Details</h2>
@@ -62,7 +66,7 @@
 				<div class="col-md-12" ng-show="cardInfo.card_type == 'monster'">
 					<div class="col-md-6">
 						<center>
-							<button type="button" class="btn btn-lg btn-danger disabled">
+							<button type="button" class="btn btn-lg btn-danger" ng-click="atkStance()">
 								<i class="fa fa-rocket" aria-hidden="true"></i>
 								{{cardInfo.atk}}
 							</button>
@@ -70,7 +74,7 @@
 					</div>
 					<div class="col-md-6">
 						<center>
-							<button type="button" class="btn btn-lg btn-primary disabled">
+							<button type="button" class="btn btn-lg btn-primary" ng-click="defStance()">
 								<i class="fa fa-shield" aria-hidden="true"></i>
 								{{cardInfo.def}}
 							</button>
@@ -82,6 +86,7 @@
 	</div>
 
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

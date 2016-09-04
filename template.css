@@ -9,6 +9,16 @@
 }
 
 #sideDeck {
-	/*width: 16%;*/
 	margin-bottom: 0px;
+}
+
+#cardInfo > img, #cardInfo > #divInfo {
+	transition: all linear 0.2s;
+}
+
+#cardInfo > img.rotate {
+	transform: rotate(90deg);
+	width: auto;
+	padding-left: 124px;
+	padding-right: 124px;
 }
